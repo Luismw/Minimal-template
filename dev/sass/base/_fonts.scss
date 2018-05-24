@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+// Importar fuentes
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300,400');
+
+@font-face {
+  font-family: "icons";
+  src:url("../fonts/icons.eot");
+  src:url("../fonts/icons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/icons.woff") format("woff"),
+    url("../fonts/icons.ttf") format("truetype"),
+    url("../fonts/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  vertical-align: middle;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  vertical-align: middle;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e902";
+}
+.icon-arrow:before {
+  content: "\e901";
+}
+.icon-user:before {
+  content: "\e900";
+}
+.icon-file:before {
+  content: "\e926";
+}
+.icon-map:before {
+  content: "\e94c";
+}
+.icon-alarm:before {
+  content: "\e950";
+}
+.icon-display:before {
+  content: "\e956";
+}
+.icon-setting:before {
+  content: "\e994";
+}
+.icon-exit:before {
+  content: "\ea14";
+}

@@ -1,0 +1,88 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+
+// Variables para los colores
+
+// Colores generales
+$negro:      	#444444;
+$blanco:     	#ffffff;
+$text:       	#666666;
+$plomo : 		#F8F8F8;
+
+// Colores de la paleta
+$color1: #153243;
+$color2: #284b63;
+$color3: #eeeeee;
+
+// Variables para las fuentes
+$font-title: 'Montserrat', sans-serif;
+$font-text:  'Open Sans', sans-serif;
+
+// Añadir librerias base para el funcionamiento y diseño del sitio web
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/hamburgers/hamburgers';
+
+// Importando Framework EDgrid
+@import 'edgrid/ed-grid';
+
+//Librerias extras
+
+.container{
+	@include from(1350px){
+		max-width: 1300px;
+	}
+	@include from(1450px){
+		max-width: 1400px;
+	}
+	@include from(1550px){
+		max-width: 1500px;
+	}
+	@include from(1600px){
+		max-width: 1550px;
+	}
+	@include from(1650px){
+		max-width: 1600px;
+	}
+	@include from(1700px){
+		max-width: 1650px;
+	}
+	@include from(1750px){
+		max-width: 1700px;
+	}
+	@include from(1800px){
+		max-width: 1750px;
+	}
+	@include from(1850px){
+		max-width: 1800px;
+	}
+	@include from(1900px){
+		max-width: 1850px;
+	}
+	@include from(1950px){
+		max-width: 1900px;
+	}
+	@include from(1200px){
+		max-width: 1950px;
+	}
+	&.full{
+		max-width: 100% !important;
+	}
+}
+
+.light{
+	font-weight: 300;
+}
+.regular{
+	font-weight: 400;
+}
+.bold{
+	font-weight: 700;
+}
+
+// Archivos dev
+@import 'dev/globals';
+@import 'dev/header';
+@import 'dev/sidebar';
+@import 'dev/index';

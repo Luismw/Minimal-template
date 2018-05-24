@@ -1,0 +1,223 @@
+.main-header{
+    padding: .6em 1em;
+    background: $color3;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 5px 0 rgba($text,.1);
+    top: 0;
+    left: 0;
+
+    .container{
+        justify-content: space-between;
+
+        .main-logo{
+            display: flex;
+            align-items: center;
+
+            .image{
+                width: 100%;
+                max-width: 40px;
+                filter: grayscale(100%);
+            }
+            .title{
+                font-size: 1.3em;
+                padding-left: 5px;
+                color: $color1;
+            }
+        }
+        .main-nav{
+            display: flex;
+            align-items: center;
+
+            &__toggle{
+                padding-top: 5px;
+
+                @include from(md){
+                    display: none;
+                }
+            }
+            .main-menu{
+                display: flex;
+                align-items: center;
+
+                @include to(md){
+                    position: absolute;
+                    background: $color3;
+                    top: 100%;
+                    right: -100%;
+                    width: 100%;
+                    max-width: 250px;
+                    transition: all .5s;
+                    opacity: 0;
+
+                    &.active{
+                        right: 0;
+                        opacity: 1;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+
+                &__item{
+                    position: relative;
+
+                    @include to(md){
+                        width: 100%;
+                        border-top: 1px solid rgba($text,.1);
+
+                        &:nth-child(1){
+                            order: 2;
+                        }
+                        &:nth-child(2){
+                            order: 3;
+                        }
+                        &:nth-child(3){
+                            order: 4;
+                        }
+                        &:nth-child(4){
+                            order: 1;
+                        }
+                    }
+                    
+                    .user{
+                        #btn-info-extra{
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            margin-left: 2em;
+
+                            @include to(md){
+                                margin-left: 0;
+                                justify-content: space-between;
+                                padding: .7em 1em;
+                            }
+
+                            .image-profile{
+                                border-radius: 50%;
+                                max-width: 45px;
+                            }
+
+                            .name{
+                                text-align: center;
+                                padding-left: .5em;
+                                color: $color1;
+                                font-family: $font-title;
+
+                                @include to(md){
+                                    padding-top: 5px;
+                                }
+
+                                .role{
+                                    display: block;
+                                    font-size: .8em;
+                                    padding-top: 2px;
+                                    font-family: $font-text;
+                                    font-weight: 300;
+                                }
+                            }
+
+                            .icon{
+                                display: block;
+                                padding-right: .5em;
+                                margin-left: 5px;
+                                transition: all .3s;
+                                color: $negro;
+                                position: relative;
+                                transform: rotate(180deg);
+                                padding-bottom: 5px;
+                                font-size: 1.1em;
+
+                                &.active{
+                                    transform: rotate(0);
+                                    margin-left: 0;
+                                    padding-right: 0;
+                                    padding-left: .5em;
+                                    margin-right: 5px;
+                                    
+                                }
+                            }
+                        }
+                        .info-extra{
+                            position: absolute;
+                            background: $color3;
+                            top: -100%;
+                            right: 0;
+                            margin-top: 5px;
+                            width: 100%;
+                            transition: all .3s;
+                            visibility: hidden;
+                            opacity: 0;
+
+                            @include to(md){
+                                background: $plomo;
+                                position: relative;
+                                height: 0;
+
+                                &.active{
+                                    height: 100%;
+                                    top: 0;
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+
+                            @include from(md){
+                                &.active{
+                                    top: 100%;
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                            }
+
+                            &__item{
+                                border-top: 1px solid rgba($text,.05);
+
+                                .link{
+                                    text-align: center;
+                                    display: block;
+                                    padding: 1em;
+                                    font-size: .9em;
+                                    color: $text;
+                                    transition: all .3s;
+
+                                    @include from(md){
+                                        &:hover{
+                                            background: darken($color3,3%);
+
+                                            &::before{
+                                                color: $color1;
+                                            }
+                                        }
+                                    }
+
+                                    &::before{
+                                        font-size: 1.1em;
+                                        color: $text;
+                                        margin-right: 5px;
+                                        transition: all .3s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &__link{
+                    color: $text;
+                    padding: 0 1em;
+                    transition: all .3s;
+
+                    @include to(md){
+                        padding: 1em 0;
+                        display: block;
+                        text-align: center;
+                    }
+
+                    &:hover{
+                        color: $negro;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+#index{
+    .content{
+        
+        &__toggle{
+            position: fixed;
+            top: 0;
+            height: 100%;
+            z-index: 500;
+            background: $color3;
+            padding: 10px 5px 5px;
+            transition: all .4s;
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            left: 0;
+
+            .hamburger-inner {
+                &::before {
+                    transform: translate3d($hamburger-layer-width * 0.2, 0, 0) rotate(45deg) scale(0.7, 1);
+                }
+
+                &::after {
+                    transform: translate3d($hamburger-layer-width * 0.2, 0, 0) rotate(-45deg) scale(0.7, 1);
+                }
+            }
+
+            &.is-active {
+                left: 250px;
+
+                .hamburger-inner {
+                    &::before {
+                        transform: translate3d($hamburger-layer-width * -0.2, 0, 0) rotate(-45deg) scale(0.7, 1);
+                    }
+
+                    &::after {
+                        transform: translate3d($hamburger-layer-width * -0.2, 0, 0) rotate(45deg) scale(0.7, 1);
+                    }
+                }
+            }
+
+            &.mobile{
+                @include from(md){
+                    display: none;
+                }
+            }
+            &.desktop{
+                @include to(md){
+                    display: none;
+                }
+            }
+        }
+
+        .main{
+            transition: all .4s;
+            padding: 4em 1em 2em 300px;
+            background: $plomo;
+
+            @include to(md){
+                padding: 4em 1em 2em 50px;
+            }
+
+            @include to(m){
+                padding: 4em 1em 1em 40px;
+            }
+
+            &.active{
+                padding: 4em 1em 2em 50px;
+            }
+
+            .page-content{
+                color: $text;
+                line-height: 1.5;
+                font-size: 14px;
+                font-family: $font-text;
+                padding: 1em;
+
+                p{
+                    margin-bottom: .8em;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+                a{
+                    text-decoration: underline;
+                    color: $color1;
+                }
+                img{
+                    display: block;
+                    width: 100%;
+                    max-width: 900px;
+                }
+                ul,
+                ol{
+                    list-style-type: disc;
+                    padding-left: 2em;
+                    margin-bottom: 1em;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    li{
+                        line-height: 1.2;
+                        padding-bottom: 7px;
+
+                        &:last-child{
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+                ol{
+                    list-style-type: decimal;
+                }
+                strong{
+                    color: rgba($negro,.85);
+                }
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6{
+                    color: $color1;
+                    line-height: 1;
+                    font-weight: 600;
+                }
+                h1{
+                    font-size: 2em;
+                    margin: .6em 0;
+                }
+                h2{
+                    font-size: 1.5em;
+                    margin: .8em 0;
+                }
+                h3{
+                    font-size: 1.17em;
+                    margin: 1em 0;
+                }
+                h4{
+                    font-size: 1em;
+                    margin: 1.1em 0;
+                }
+                h5{
+                    font-size: .83em;
+                    margin: 1.6em 0;
+                }
+                h6{
+                    font-size: .67em;
+                    margin: 2em 0;
+                }
+            }
+        }
+    }
+}

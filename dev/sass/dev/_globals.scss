@@ -1,0 +1,12 @@
+::selection {
+    background: $color1;
+    color: $blanco;
+    text-shadow: none;
+}
+
+.description{
+	margin-bottom: 1em;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,124 @@
+.main-sidebar{
+    position: fixed;
+    max-width: 250px;
+    width: 100%;
+    left: 0;
+    top: 64px;
+    background: $plomo;
+    z-index: 600;
+    height: 100%;
+    overflow-y: auto;
+    transition: all .4s;
+    box-shadow: 0 0 10px 0 rgba($text,.1);
+    padding-bottom: 5em;
+
+
+    @include to(md){
+        left: -250px;
+        top: 51px;
+    }
+
+    &.active{
+        left: -250px;
+
+        @include to(md){
+            left: 0;
+        }
+    }
+
+    .search{
+        padding: 1.5em .5em;
+        background: $color3;
+
+        .input-wrap{
+            position: relative;
+
+            input{
+                width: 100%;
+                font-family: $font-text;
+                padding: 7px 5px;
+                outline: none;
+                border: 1px solid rgba($text,.3);
+                font-size: .8em;
+                font-style: italic;
+                color: $text;
+                padding-right: 3.2em;
+                background: $plomo;
+            }
+            .btn-search{
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                border: none;
+                background: $color1;
+                color: $blanco;
+                font-size: 1.2em;
+                padding: 0 8px;
+                cursor: pointer;
+                transition: all .3s;
+            }
+        }
+    }
+    .info-text{
+        text-align: center;
+        font-family: $font-title;
+        font-weight: 600;
+        font-size: .95em;
+        padding: 2em 0;
+        border-bottom: 1px solid rgba($text,.1);
+    }
+    .menu{
+
+        &__item{
+            color: $text;
+            padding: 0 .5em;
+            position: relative;
+            border-bottom: 1px solid rgba($text,.1);
+
+            &:first-child{
+                .submenu{
+                    display: block;
+                }
+            }
+
+            .btn-submenu{
+                display: flex;
+                justify-content: space-between;
+                color: $negro;
+                font-size: .95em;
+                padding: 1em .5em;
+                cursor: pointer;
+
+                &.active{
+                    .icon{
+                        transform: rotate(0);
+                    }
+                }
+
+                .icon{
+                    transform: rotate(180deg);
+                    font-size: 1.1em;
+                    transition: all .3s;
+                }
+            }
+            .submenu{
+                display: none;
+                padding: .5em .5em .5em 1em;
+                background: $color3;
+
+                .link{
+                    display: block;
+                    color: $text;
+                    font-size: .85em;
+                    padding: 8px 0;
+
+                    &:hover{
+                        color: $negro;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
